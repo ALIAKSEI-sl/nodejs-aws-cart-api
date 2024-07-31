@@ -16,7 +16,7 @@ export class UsersService {
     return this.users[ userId ];
   }
 
-  createOne({ name, password }: User): User {
+  createOne({ name, password }: Omit<User, 'id'>): User {
     const id = v4();
     const newUser = { id: name || id, name, password };
 
